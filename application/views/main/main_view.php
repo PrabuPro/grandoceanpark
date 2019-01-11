@@ -14,7 +14,7 @@
 	<!-- Compiled and minified CSS -->
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png">
 
-	<title>Grand Oceanpark</title>
+	<title>Grand Oceanpark - <?php echo $site_title; ?></title>
 </head>
 
 <body>
@@ -66,7 +66,7 @@
 	</footer>
 	</main>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- <script src="js/parallax.js"></script> -->
 	<!-- <script src="js/materialize.min.js"></script> -->
 	<!-- Compiled and minified JavaScript -->
@@ -77,28 +77,6 @@
 		$(function () {
 			$(".preload").fadeOut(2000, function () {
 				$(".content").fadeIn(1000);
-
-				const calander = document.querySelector('.datepicker');
-				M.Datepicker.init(calander, {
-					format: 'dd-mm-yy'
-				});
-
-				const time = document.querySelector('.timepicker');
-				M.Timepicker.init(time, {});
-
-				const select = document.querySelector('select');
-				M.FormSelect.init(select, {});
-
-				AOS.init();
-
-				$(document).ready(function () {
-					$('.parallax').parallax();
-				});
-
-				setTimeout(function () {
-					self.location.href = '#popup'
-				}, 4000);
-
 			});
 
 		});
@@ -110,6 +88,24 @@
 				$('.navbartoggle').removeClass('navbary');
 			}
 		});
+
+		const calander = document.querySelector('.datepicker');
+		M.Datepicker.init(calander, {
+			format: 'dd-mm-yy'
+		});
+
+		const time = document.querySelector('.timepicker');
+		M.Timepicker.init(time, {});
+
+		const select = document.querySelector('select');
+		M.FormSelect.init(select, {});
+
+		AOS.init();
+
+		$(document).ready(function () {
+			$('.parallax').parallax();
+		});
+		
 
 	</script>
 	</div>

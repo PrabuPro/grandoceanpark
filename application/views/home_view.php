@@ -294,30 +294,30 @@
                         <div class="book-table__box">
                             <h1 class="book-table__title">Book a Table</h1>
                             <div class="book-table__form">
-                                <form action="#" class="form">
+                                <form method="post" class="form" id="form">
                                     <div class="form-rows">
                                         <div class="input-field">
-                                            <input id="beginDate" type="text" class="datepicker">
+                                            <input id="beginDate" type="text" class="datepicker" name="date" required>
                                             <label for="beginDate" class="book-table__label">Date</label>
                                         </div>
                                         <div class="input-field">
-                                            <input id="name" type="text">
+                                            <input id="name" type="text" name="name" required>
                                             <label for="name" class="book-table__label">Name</label>
                                         </div>
                                     </div>
                                     <div class="form-rows">
                                         <div class="input-field">
-                                            <input id="time" type="text" class="timepicker">
+                                            <input id="time" type="text" class="timepicker" name="time" required>
                                             <label for="time" class="book-table__label">Time</label>
                                         </div>
                                         <div class="input-field">
-                                            <input id="name" type="text">
+                                            <input id="name" type="text" name="phone" required>
                                             <label for="name" class="book-table__label">Phone</label>
                                         </div>
                                     </div>
                                     <div class="form-rows">
                                         <div class="input-field">
-                                            <select>
+                                            <select name="people" required>
                                                 <option value="" disabled selected class="book-table__label">People</option>
                                                 <option value="1">1 Person</option>
                                                 <option value="2">2 People</option>
@@ -331,13 +331,13 @@
                                             <!-- <label>People</label> -->
                                         </div>
                                         <div class="input-field">
-                                            <input id="emai" type="email">
+                                            <input id="emai" type="email" name="email" required>
                                             <label for="emai" class="book-table__label">Email</label>
                                         </div>
                                     </div>
 
                                     <div class="from__group book-table__button">
-                                        <button class="btnx btnx-green ">
+                                        <button class="btnx btnx-green" id="book-now">
                                             Book now &rarr;
                                         </button>
                                     </div>
@@ -363,4 +363,25 @@
                     <a href="#" class="btnx btnx-green popup__button">Get Promotion</a>
                 </div>
             </div>
-        </div>
+    </div>
+    <script src="<?php echo base_url(); ?>assets/js/popup.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+    
+        $(document).ready(function(){
+			$('#book-now').on('click', function(e){
+                e.preventDefault();
+                
+                $.ajax({
+                    type:"POST",
+                    url: "<?php echo base_url(); ?>reservation/makeReservation",
+                    data:$('#form').serialize(),
+                    dataType:"json",
+                    success:function(data){
+                        alert(data.error);
+                    };
+			    });
+        });
+        
+    </script>
