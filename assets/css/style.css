@@ -825,6 +825,22 @@ body {
     .book-table {
       background-image: none;
       background-color: #fff; } }
+    .book-table__msg--red {
+    	font-size: 1.4rem;
+    	font-weight: 600;
+    	border-radius: 5px;
+    	padding: .5rem 2rem;
+    	background-color: rgba(231, 76, 60, 0.5);
+    	color: #740101;
+    }
+    .book-table__msg--green {
+    	font-size: 1.6rem;
+    	font-weight: 600;
+    	border-radius: 5px;
+    	padding: .5rem 2rem;
+    	background-color: rgba(29, 211, 176, 0.5);
+    	color: #086375;
+    }
   .book-table__label {
     font-size: 1.45rem !important;
     color: #000 !important;

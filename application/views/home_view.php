@@ -293,31 +293,33 @@
                     <div class="row">
                         <div class="book-table__box">
                             <h1 class="book-table__title">Book a Table</h1>
+                            <div class="book-table__msg--red"></div>
+                            <div class="book-table__msg--green"></div>
                             <div class="book-table__form">
-                                <form method="post" class="form" id="form">
+                                <form action="reservation/makereservation" method="post" class="form" id="form">
                                     <div class="form-rows">
                                         <div class="input-field">
-                                            <input id="beginDate" type="text" class="datepicker" name="date" required>
+                                            <input id="beginDate" type="text" class="datepicker" name="date" >
                                             <label for="beginDate" class="book-table__label">Date</label>
                                         </div>
                                         <div class="input-field">
-                                            <input id="name" type="text" name="name" required>
+                                            <input id="name" type="text" name="name" >
                                             <label for="name" class="book-table__label">Name</label>
                                         </div>
                                     </div>
                                     <div class="form-rows">
                                         <div class="input-field">
-                                            <input id="time" type="text" class="timepicker" name="time" required>
+                                            <input id="time" type="text" class="timepicker" name="time" >
                                             <label for="time" class="book-table__label">Time</label>
                                         </div>
                                         <div class="input-field">
-                                            <input id="name" type="text" name="phone" required>
+                                            <input id="name" type="text" name="phone" >
                                             <label for="name" class="book-table__label">Phone</label>
                                         </div>
                                     </div>
                                     <div class="form-rows">
                                         <div class="input-field">
-                                            <select name="people" required>
+                                            <select name="people" >
                                                 <option value="" disabled selected class="book-table__label">People</option>
                                                 <option value="1">1 Person</option>
                                                 <option value="2">2 People</option>
@@ -331,15 +333,13 @@
                                             <!-- <label>People</label> -->
                                         </div>
                                         <div class="input-field">
-                                            <input id="emai" type="email" name="email" required>
+                                            <input id="emai" type="email" name="email" >
                                             <label for="emai" class="book-table__label">Email</label>
                                         </div>
                                     </div>
 
                                     <div class="from__group book-table__button">
-                                        <button class="btnx btnx-green" id="book-now">
-                                            Book now &rarr;
-                                        </button>
+                                        <input class="btnx btnx-green" id="submit" type="submit" name="name" value="Book now &rarr;" >
                                     </div>
                                 </form>
                             </div>
@@ -367,21 +367,30 @@
     <script src="<?php echo base_url(); ?>assets/js/popup.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script>
-    
+   <script>
+
         $(document).ready(function(){
-			$('#book-now').on('click', function(e){
+            $('.form').on('submit', function(e){
                 e.preventDefault();
+                $('.book-table__msg--red').empty();
                 
                 $.ajax({
-                    type:"POST",
-                    url: "<?php echo base_url(); ?>reservation/makeReservation",
-                    data:$('#form').serialize(),
-                    dataType:"json",
-                    success:function(data){
-                        alert(data.error);
-                    };
-			    });
+                    type: 'POST',
+                    url: 'reservation/makereservation',
+                    data: $('.form').serialize(),
+                    datatype: "html",
+                    success: function(data){
+                        var text = data;
+                        if( text === "<p>Booking Successful</p>") {
+                            $('.book-table__msg--green').append(data);
+                        }else{
+                            $('.book-table__msg--red').append(data);
+                            $('.book-table').css('height','70rem');
+                        }
+                    }
+                });
+            });
         });
-        
-    </script>
+
+   </script>
+
