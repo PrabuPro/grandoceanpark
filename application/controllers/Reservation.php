@@ -14,10 +14,14 @@ class Reservation extends CI_Controller{
         $this->form_validation->set_rules('people', 'People', 'trim|required|max_length[1]');
 
         if($this->form_validation->run() == FALSE){
-    
+            
+            // $data = false;
+            // $this->session->set_flashdata($data);
             echo validation_errors();
             
         } else {
+            // $data = true;
+            // $this->session->set_flashdata($data);
             echo "Booking Successful";
         }
     

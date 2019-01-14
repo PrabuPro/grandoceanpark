@@ -14,7 +14,7 @@
 	<!-- Compiled and minified CSS -->
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png">
 
-	<title>Grand Oceanpark - <?php echo $site_title; ?></title>
+	<title>Grand Oceanpark - <?php if(isset($site_title)){echo $site_title;}else{echo 'Home';} ?></title>
 </head>
 
 <body>
