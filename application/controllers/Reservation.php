@@ -14,15 +14,34 @@ class Reservation extends CI_Controller{
         $this->form_validation->set_rules('people', 'People', 'trim|required|max_length[1]');
 
         if($this->form_validation->run() == FALSE){
-            
-            // $data = false;
-            // $this->session->set_flashdata($data);
+    
             echo validation_errors();
             
         } else {
-            // $data = true;
-            // $this->session->set_flashdata($data);
-            echo "Booking Successful";
+            
+            $name = $this->input->post('name');
+            $phone = $this->input->post('phone');
+            $email = $this->input->post('email');
+            $date = $this->input->post('date');
+            $time = $this->input->post('time');
+            $people = $this->input->post('people');
+            
+            if($this->session->has_userdata('name')) {
+                if($this->session->userdata('phoneNo') == $phone && $this->session->userdata('date') == $date && $this->session->userdata('time') == $time && $this->session->userdata('name') == $name && $this->session->userdata('email') == $email && $this->session->userdata('people') == $people ){
+                    echo "You have entered the same value again";
+                } else {
+                    $result =  $this->reservation_model->bookTable($name,$phone,$email,$date,$time,$people);
+                    echo "Booking Successful 1";
+                }
+            } else {
+                $result =  $this->reservation_model->bookTable($name,$phone,$email,$date,$time,$people);
+                 if($result == 1){
+                    echo "Booking Successful 2";
+                } 
+            
+            }
+            
+           
         }
     
     }
