@@ -18,33 +18,54 @@ class Reservation extends CI_Controller{
             echo validation_errors();
             
         } else {
+
+            $today = date("d-m-y");
             
             $name = $this->input->post('name');
             $phone = $this->input->post('phone');
             $email = $this->input->post('email');
-            $date = $this->input->post('date');
+            $date =  $this->input->post('date');
             $time = $this->input->post('time');
             $people = $this->input->post('people');
-            
-            if($this->session->has_userdata('name')) {
-                if($this->session->userdata('phoneNo') == $phone && $this->session->userdata('date') == $date && $this->session->userdata('time') == $time && $this->session->userdata('name') == $name && $this->session->userdata('email') == $email && $this->session->userdata('people') == $people ){
-                    echo "You have entered the same value again";
-                } else {
-                    $result =  $this->reservation_model->bookTable($name,$phone,$email,$date,$time,$people);
-                    echo "Booking Successful 1";
+
+
+            //check date vs today
+            if($date < $today){
+                $message = "Selected date is not accurate. Please check the date";
+                echo $message;
+            } else {
+                //check wheather have session initialized
+                if($this->session->has_userdata('name')) {
+                    //Check the session wheather it is same
+                    if($this->session->userdata('phoneNo') == $phone && $this->session->userdata('date') == $date && $this->session->userdata('time') == $time && $this->session->userdata('name') == $name && $this->session->userdata('email') == $email && $this->session->userdata('people') == $people ){
+                        $message = "You have entered the same value again";
+                    } else {
+                        //send to database
+                        $result =  $this->reservation_model->bookTable($name,$phone,$email,$date,$time,$people,$today);
+                        if($result == false){
+                            $message =  "Sorry! All the Tables booked at the time";
+                        } else {
+                            $message =  "Booking Successful";
+                    }
                 }
             } else {
-                $result =  $this->reservation_model->bookTable($name,$phone,$email,$date,$time,$people);
-                 if($result == 1){
-                    echo "Booking Successful 2";
+                //if no session go to database
+                $result =  $this->reservation_model->bookTable($name,$phone,$email,$date,$time,$people,$today);
+                if($result == false){
+                        $message =  "Sorry! All the Tables booked at the time";
+                } else {
+                    $message =  "Booking Successful";
                 } 
             
             }
-            
+
+            echo $message;
+            }
            
         }
     
     }
+    
 
 
 }
