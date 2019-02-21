@@ -418,7 +418,7 @@
             <div class="popup" id="popup">
             <div class="popup__content">
                 <div class="popup__left">
-                    <img src="<?php echo base_url();?>assets/img/food-banner3.jpg" class="popup__img" alt="">
+                    <img src="<?php echo base_url();?>assets/img/promotion.jpg" class="popup__img" alt="">
                 </div>
                 <div class="popup__right">
                     <a href="#section-tours" class="popup__close">&times;</a>
