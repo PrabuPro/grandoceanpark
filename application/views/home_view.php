@@ -11,30 +11,78 @@
         <header class="header">
             <div class="header__text-box">
                 <h1 class="heading-primary">
-                    <span class="heading-primary--main-1">Welcome</span>
+                    <span class="heading-primary--main-1">Simply <span class="heading-primary--main-1-2">the freshest</span>,
+                        <br><span class="heading-primary--main-1-2">most delicious </span> seafood <br> in town</span>
                 </h1>
             </div>
         </header>
 
-        <a href="#book-table"><span class="book-now-btn"> Book Now! </span></a>
+        <a href="#section-offer"><span class="book-now-btn"> Special Offers! </span></a>
+
 
         <main>
             <div class="section-intro" data-aos="fade-up">
                 <div class="row">
-                    <div class="col-1-of-2">
+                    <div class="col-1-of-3" style="margin-right:0;">
                         <div class="intro-box">
-                            <h1 class="intro-box__title">Welcome</h1>
-                            <p class="intro-box__para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                                delectus repellendus laudantium assumenda ducimus? Quas inventore architecto esse
-                                aspernatur tempore consequuntur hic minus eaque corporis. Ea facere ab eius veritatis
-                                incidunt ducimus ullam eveniet? Aspernatur voluptas earum esse praesentium ut atque,
-                                cumque
-                                magnam obcaecati quae consequatur accusamus vel eum sit.</p>
+                            <h1 class="intro-box__title">Choose your favourite from our <br><span class="intro-box__title-1">Ala
+                                    Carte Menu.</span></h1>
+                            <p class="intro-box__para">Grand Oceanpark serves simply the freshest, most delicious
+                                seafood in town. Come visit us with your loved ones, they are
+                                sure to have the best time!s</p>
                         </div>
                     </div>
-                    <div class="col-1-of-2">
-                        <div class="intro-box">
-                            <div class="intro-box__img"></div>
+                    <div class="col-2-of-3">
+                        <div class="menu">
+                            <div class="menu__item">
+                                <img class="menu__icon" src="<?php echo base_url();?>assets/img/icons/seafood.svg" alt="">
+                                <p class="menu__text">Fresh SeaFood</p>
+                            </div>
+                            <div class="menu__item">
+                                <img class="menu__icon" src="<?php echo base_url();?>assets/img/icons/fresh salad.svg" alt="">
+                                <p class="menu__text">Fresh Salads</p>
+                            </div>
+                            <div class="menu__item">
+                                <img class="menu__icon" src="<?php echo base_url();?>assets/img/icons/fresh juice.svg" alt="">
+                                <p class="menu__text">Fresh Juice</p>
+                            </div>
+                            <div class="menu__item">
+                                <img class="menu__icon" src="<?php echo base_url();?>assets/img/icons/meat.svg" alt="">
+                                <p class="menu__text">Meat Items</p>
+                            </div>
+                            <div class="menu__item">
+                                <img class="menu__icon" src="<?php echo base_url();?>assets/img/icons/Pasta & Noodle Dishes.svg" alt="">
+                                <p class="menu__text">Pasta & Noodle Dishes</p>
+                            </div>
+                            <div class="menu__item">
+                                <img class="menu__icon" src="<?php echo base_url();?>assets/img/icons/mocktail.svg" alt="">
+                                <p class="menu__text">Mocktails</p>
+                            </div>
+                            <div class="menu__item">
+                                <img class="menu__icon" src="<?php echo base_url();?>assets/img/icons/fresh salad.svg" alt="">
+                                <p class="menu__text">Vegetarial Dishes</p>
+                            </div>
+                            <div class="menu__item">
+                                <img class="menu__icon" src="<?php echo base_url();?>assets/img/icons/pizza.svg" alt="">
+                                <p class="menu__text">Pizza</p>
+                            </div>
+                            <div class="menu__item">
+                                <img class="menu__icon" src="<?php echo base_url();?>assets/img/icons/healthy drink.svg" alt="">
+                                <p class="menu__text">Health Drink</p>
+                            </div>
+                            <div class="menu__item">
+                                <img class="menu__icon" src="<?php echo base_url();?>assets/img/icons/soup.svg" alt="">
+                                <p class="menu__text">Soups</p>
+                            </div>
+                            <div class="menu__item">
+                                <img class="menu__icon" src="<?php echo base_url();?>assets/img/icons/deserts.svg" alt="">
+                                <p class="menu__text">Deserts</p>
+                            </div>
+                            <div class="menu__item">
+                                <img class="menu__icon" src="<?php echo base_url();?>assets/img/icons/coffee.svg" alt="">
+                                <p class="menu__text">Tea / Coffee</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -50,10 +98,12 @@
                     <div class="col-1-of-4">
                         <div class="feature-box">
                             <img src="<?php echo base_url();?>assets/img/icons/food.png" class="feature-box__img" alt="">
-                            <h3 class="heading-tertiary u-margin-bottom-small">Daily Buffet</h3>
+                            <h3 class="heading-tertiary u-margin-bottom-small">Daily Lunch Buffet</h3>
                             <p class="feature-box__text u-margin-bottom-small">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam perspiciatis, ad sunt
-                                Lorem ipsum dolor sit amet consectetur
+                                The traditional authenticity of a delicious Sri Lankan rice curry are preserved in
+                                    bringing to you daily
+                                    lunch, served
+                                    on a banana leaf – ‘kesel kole-.
 
                             </p>
                         </div>
@@ -71,10 +121,12 @@
                     <div class="col-1-of-4">
                         <div class="feature-box">
                             <img src="<?php echo base_url();?>assets/img/icons/tea.png" class="feature-box__img" alt="">
-                            <h3 class="heading-tertiary u-margin-bottom-small">Cup of Coffee</h3>
+                            <h3 class="heading-tertiary u-margin-bottom-small">Celebrations and special moments</h3>
                             <p class="feature-box__text u-margin-bottom-small">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam perspiciatis, ad sunt
-                                Lorem ipsum dolor sit amet consectetur
+                                Grand Oceanpark is the perfect place for that special dinner with your special
+                                    someone. Or, to celebrate the
+                                    love with
+                                    your friends and family.
                             </p>
 
                         </div>
@@ -84,8 +136,10 @@
                             <img src="<?php echo base_url();?>assets/img/icons/cake.png" class="feature-box__img" alt="">
                             <h3 class="heading-tertiary u-margin-bottom-small">Happy Hour</h3>
                             <p class="feature-box__text u-margin-bottom-small">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam perspiciatis, ad sunt
-                                Lorem ipsum dolor sit amet consectetur
+                                If you happen to treat yourself to a meal at Grand Oceanpark during our Happy Hour
+                                    – 4.00pm – 6.30pm, we
+                                    have super
+                                    duper discounts on food and buy-one get-one on selected juices.
                             </p>
                         </div>
                     </div>
@@ -105,86 +159,86 @@
                     <div class="gallery">
                         <section class="section">
                             <div class="grid">
-                                <div class="item">
+                                <a class="item item__image-1" href="<?php echo base_url(); ?>assets/img/gallery-7-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
                                         jelly-o brownie sweet
                                     </div>
-                                </div>
-                                <div class="item item--large">
+                                </a>
+                                <a class="item item--large item__image-2" href="<?php echo base_url(); ?>assets/img/gallery-10-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
                                         Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item item--medium">
+                                </a>
+                                <a class="item item--medium item__image-3" href="<?php echo base_url(); ?>assets/img/gallery-21-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        sesame snaps chocolate
+                                        Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item item--large">
+                                </a>
+                                <a class="item item--large item__image-4" href="<?php echo base_url(); ?>assets/img/gallery-19-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        Oat cake
+                                        Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item item--full">
+                                </a>
+                                <a class="item item--full item__image-5" href="<?php echo base_url(); ?>assets/img/gallery-8-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        jujubes cheesecake
+                                        Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item item--medium">
+                                </a>
+                                <a class="item item--medium item__image-6" href="<?php echo base_url(); ?>assets/img/gallery-20-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        Dragée pudding brownie
+                                        Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item item--large">
+                                </a>
+                                <a class="item item--large item__image-7" href="<?php echo base_url(); ?>assets/img/gallery-13-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        Oat cake
+                                        Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item">
+                                </a>
+                                <a class="item item__image-8" href="<?php echo base_url(); ?>assets/img/gallery-5-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        powder toffee
+                                        Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item item--medium">
+                                </a>
+                                <a class="item item--medium item__image-9" href="<?php echo base_url(); ?>assets/img/gallery-1-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        pudding cheesecake
+                                        Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item item--large">
+                                </a>
+                                <a class="item item--large item__image-10" href="<?php echo base_url(); ?>assets/img/gallery-16-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        toffee bear claw
+                                        Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item">
+                                </a>
+                                <a class="item item__image-11" href="<?php echo base_url(); ?>assets/img/gallery-6-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        cake cookie croissant
+                                        Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item item--medium">
+                                </a>
+                                <a class="item item--medium item__image-12" href="<?php echo base_url(); ?>assets/img/gallery-18-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        liquorice sweet roll
+                                        Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item item--medium">
+                                </a>
+                                <a class="item item--medium item__image-13" href="<?php echo base_url(); ?>assets/img/gallery-17-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        chocolate marzipan
+                                        Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item item--large">
+                                </a>
+                                <a class="item item--large item__image-14" href="<?php echo base_url(); ?>assets/img/gallery-11-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        danish dessert lollipop
+                                        Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item">
+                                </a>
+                                <a class="item item__image-15" href="<?php echo base_url(); ?>assets/img/gallery-22-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        sugar plum dragée
+                                        Muffin jelly gingerbread
                                     </div>
-                                </div>
-                                <div class="item">
+                                </a>
+                                <a class="item item__image-16" href="<?php echo base_url(); ?>assets/img/gallery-23-max.jpg" data-lightbox="roadtrip">
                                     <div class="item__details">
-                                        jelly-o brownie sweet
+                                        Muffin jelly gingerbreaddfds
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </section>
                     </div>
@@ -192,7 +246,7 @@
             </div>
 
             <div class="parallax-container overlay-dark">
-                <div class="parallax"><img src="<?php echo base_url();?>assets/img/eating.jpeg"></div>
+                <div class="parallax"><img src="<?php echo base_url();?>assets/img/bg_2.jpg"></div>
             </div>
 
             <div class="section-chef u-margin-top-big">
@@ -201,14 +255,16 @@
                         <div class="col-1-of-2">
                             <div class="chef__text">
                                 <div class="chef__title">
-                                    Meet the chef
+                                    Our expert chefs
                                 </div>
                                 <div class="chef__para">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati nobis voluptatem
-                                    aliquam
-                                    libero, ea sapiente architecto corrupti tempora laboriosam aperiam est nihil in
-                                    saepe
-                                    illo.
+                                    In addition to an assortment of the finest food and beverages, the skilled and
+                                    experienced team at Grand Ocean Park
+                                    delivers true hospitality to our guests with honour and pleasure. Our team of chefs
+                                    take great care in designing the
+                                    spectacular menu, and in creating each dish for each guest – each and everytime.
+                                    Knowing you enjoyed the meal, is the
+                                    greatest satisfaction of all.
                                 </div>
                                 <img src="<?php echo base_url();?>assets/img/icons/hot-soup-bowl.png" class="chef__icon" alt="">
                             </div>
@@ -270,7 +326,7 @@
             </section>
 
             <section class="section-parallax">
-                <div class="parallax-container overlay-light">
+                <div class="parallax-container">
                     <div class="parallax"><img src="<?php echo base_url();?>assets/img/family.jpeg"></div>
                     <div class="row">
                         <div class="parallax-window-2__box">
@@ -285,6 +341,17 @@
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <section class="section-offer" id="section-offer">
+                <!-- <div class="row"> -->
+                    <div class="col-1-of-2">
+                        <div class="offers" data-aos="zoom-in-up">
+                            <h1 class="offers__title">Grab your Offer 🦐</h1>
+                            <p class="offers__para" style="color:#ffffff;">Lorem, ipsum dolor sit amet consectetur adipisicing elit </p>
+                        </div>
+                    </div>
+                <!-- </div> -->
             </section>
 
 

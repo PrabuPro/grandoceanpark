@@ -11,6 +11,7 @@
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/icon-font.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/lightbox.css">
 	<!-- Compiled and minified CSS -->
 	<link rel="shortcut icon" type="image/png" href="img/favicon.png">
 
@@ -72,6 +73,7 @@
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="<?php echo base_url();?>assets/js/lightbox.js"></script>
 
 	<script>
 		$(function () {
@@ -105,6 +107,12 @@
 		$(document).ready(function () {
 			$('.parallax').parallax();
 		});
+
+		lightbox.option({
+			'resizeDuration': 200,
+			'wrapAround': true
+		});
+
 		
 
 	</script>
