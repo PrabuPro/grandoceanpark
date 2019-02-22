@@ -6,6 +6,9 @@ class MailController extends CI_Controller{
         $this->form_validation->set_rules('name','Your Name', 'trim|required|max_length[30]');
         $this->form_validation->set_rules('email','Your Email', 'trim|required|max_length[50]');
         $this->form_validation->set_rules('message','Your Message', 'trim|required|max_length[200]');
+        $this->form_validation->set_rules('g-recaptcha-response', 'recaptcha validation', 'required|callback_validate_captcha');
+        $this->form_validation->set_message('validate_captcha', 'Please check the the captcha form');
+
 
         if($this->form_validation->run() == FALSE){
             echo validation_errors();
@@ -33,6 +36,16 @@ class MailController extends CI_Controller{
 
         }
 
+    }
+
+      function validate_captcha() {
+        $captcha = $this->input->post('g-recaptcha-response');
+         $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LfrKpMUAAAAABlJuvsQNm1tmSFKgSDRbyCv6eK9&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
+        if ($response . 'success' == false) {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
     }
 
     public function sendMail($data, $id){

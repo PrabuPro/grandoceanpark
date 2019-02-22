@@ -12,9 +12,10 @@ $(document).ready(function () {
             datatype: "html",
             success: function (data) {
                 var text = data;
-                if (text === "Succeessfully send the Message!") {
+                if (text === "Booking Successful") {
                     $('.book-table__msg--white').css('display', 'none');
                     $('.book-table__msg--green').append(data);
+                    $('.book-table').css('height', '90rem');
                     $('.book-table__msg--red').css('display', 'none');
                     $('.book-table__msg--green').css('display', 'block');
                     $('.name').val(' ');
@@ -24,7 +25,7 @@ $(document).ready(function () {
                 } else {
                     $('.book-table__msg--white').css('display', 'none');
                     $('.book-table__msg--red').append(data);
-                    $('.book-table').css('height', '70rem');
+                    $('.book-table').css('height', '90rem');
                     $('.book-table__msg--green').css('display', 'none');
                     $('.book-table__msg--red').css('display', 'block');
                 }

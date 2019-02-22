@@ -33,7 +33,7 @@
 	 width="100%" height="450" frameborder="0" style="border:none; display: block;" allowfullscreen></iframe>
 
 	<section class="section-bookTable">
-		<div class="book-table">
+		<div class="book-table" style="height:80rem;">
 			<div class="row">
 				<div class="book-table__box">
 					<h1 class="book-table__title">Send Us a Mail</h1>
@@ -64,6 +64,8 @@
 								</div>
 							</div>
 
+							<div class="g-recaptcha" style="margin-bottom: 20px;" data-sitekey="6LfrKpMUAAAAAMi6YKezo76OvWQEcUG0Jtw3HaUu"></div>
+
 							<div class="from__group book-table__button">
 									<input class="btnx btnx-green" id="submit" type="submit" value="Book now &rarr;" >
 							</div>
@@ -75,5 +77,6 @@
 	</section>
 </main>
 
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <script src="<?php echo base_url(); ?>assets/js/mail.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/mail.js"></script>

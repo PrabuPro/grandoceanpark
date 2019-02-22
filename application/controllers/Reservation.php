@@ -19,7 +19,7 @@ class Reservation extends CI_Controller{
             
         } else {
 
-            $today = date("d-m-y");
+            $today = date("d-m-y"); 
             
 
             $databaseData = array(
@@ -34,14 +34,85 @@ class Reservation extends CI_Controller{
 
 
             //check date vs today
-            if($date < $today){
+            if($databaseData['date'] < $today){
                 $message = "Selected date is not accurate. Please check the date";
                 echo $message;
             } else {
                 //check wheather have session initialized
                 if($this->session->has_userdata('name')) {
                     //Check the session wheather it is same
-                    if($this->session->userdata('phoneNo') == $phone && $this->session->userdata('date') == $date && $this->session->userdata('time') == $time && $this->session->userdata('name') == $name && $this->session->userdata('email') == $email && $this->session->userdata('people') == $people ){
+                    if($this->session->userdata('phoneNo') == $databaseData['phoneNo'] && $this->session->userdata('date') == $databaseData['date'] && $this->session->userdata('time') == $databaseData['time'] && $this->session->userdata('name') == $databaseData['name'] && $this->session->userdata('email') == $databaseData['email'] && $this->session->userdata('people') == $databaseData['people'] ){
+                        $message = "You have entered the same value again";
+                    } else {
+                        //send to database
+                        $result =  $this->reservation_model->bookTable($databaseData);
+                        if($result == false){
+                            $message =  "Sorry! All the Tables booked at the time";
+                        } else {
+                            $this->sendMail($databaseData,$result);
+                            $message =  "Booking Successful";
+                    }
+                }
+            } else {
+                //if no session go to database
+                $result =  $this->reservation_model->bookTable($databaseData);
+                if($result == false){
+                        $message =  "Sorry! All the Tables booked at the time";
+                } else {
+                    $this->sendMail($databaseData,$result);
+                    $message =  "Booking Successful";
+                } 
+            
+            }
+
+            echo $message;
+            }
+           
+        }
+    
+    }
+
+
+    public function bookHall(){
+
+        // echo 'hi from makeReservations';
+        
+        $this->form_validation->set_rules('name','Name', 'trim|required|max_length[20]');
+        $this->form_validation->set_rules('phone', 'Phone', 'trim|required|max_length[13]');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|max_length[50]');
+        $this->form_validation->set_rules('date', 'Date', 'trim|required|max_length[12]');
+        $this->form_validation->set_rules('time', 'Time', 'trim|required|max_length[10]');
+        $this->form_validation->set_rules('hall_type', 'Hall Type', 'trim|required|max_length[15]');
+
+        if($this->form_validation->run() == FALSE){
+    
+            echo validation_errors();
+            
+        } else {
+
+            $today = date("d-m-y");
+            
+
+            $databaseData = array(
+                'name' => htmlspecialchars($this->input->post('name')),
+                'phone' => htmlspecialchars($this->input->post('phone')),
+                'email' => htmlspecialchars($this->input->post('email')),
+                'date' => htmlspecialchars($this->input->post('date')),
+                'time' => htmlspecialchars($this->input->post('time')),
+                'hall_type' => htmlspecialchars($this->input->post('people')),
+                'date_of_booking' => $today
+            );
+
+
+            //check date vs today
+            if($databaseData['date'] < $today){
+                $message = "Selected date is not accurate. Please check the date";
+                echo $message;
+            } else {
+                //check wheather have session initialized
+                if($this->session->has_userdata('name')) {
+                    //Check the session wheather it is same
+                    if($this->session->userdata('phoneNo') == $databaseData['phone'] && $this->session->userdata('date') == $databaseData['date'] && $this->session->userdata('time') == $databaseData['time'] && $this->session->userdata('name') == $databaseData['name'] && $this->session->userdata('email') == $databaseData['email'] && $this->session->userdata('hall_type') == $databaseData['hall_type'] ){
                         $message = "You have entered the same value again";
                     } else {
                         //send to database
@@ -75,6 +146,12 @@ class Reservation extends CI_Controller{
     public function sendMail($data,$id){
         $this->load->helper('email_helper');
 
+        if(array_key_exists('people', $data)){
+            $dataHolder = $data['people'];
+        } else {
+            $dataHolder = $data['hall_type'];
+        }
+
         $emailAddress = 'it@sunwayholidays.lk';
         $name = 'Prabuddha';
         $subject = 'Grand Oceanpark Table Bookings';
@@ -86,7 +163,7 @@ class Reservation extends CI_Controller{
         $content .= '<p>Contact Number - '.$data['phoneNo'] . '</p>';
         $content .= '<p>Date - '.$data['date'] . '</p>';
         $content .= '<p>Time - '.$data['time'] . '</p>';
-        $content .= '<p>Number of People - '.$data['people'] . '</p>';
+        $content .= '<p>Number of People - '. $dataHolder . '</p>';
         $content .= '<p>Date of Booked - '.$data['dateOfBooking'] . '</p>';
         
 

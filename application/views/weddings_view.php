@@ -63,56 +63,57 @@
 	<div class="section-reservation">
             <div class="row">
                 <div class="book-table__box-2">
-                    <h1 class="book-table__title">Book a Holl</h1>
+                    <h1 class="book-table__title">Book a Hall</h1>
+                    <div class="book-table__msg--red"></div>
+                    <div class="book-table__msg--green"></div>
+                    <div class="book-table__msg--white">
+                        <img src="<?php echo base_url();?>assets/img/rolling.gif" alt=""  class="book-table__msg--white-gif">
+                    </div>
                     <div class="book-table__form-2">
-                        <form action="#" class="form-2">
+                        <form action="reservation/bookhall" class="form-2" method="post">
                             <div class="form-rows">
                                 <div class="input-field">
-                                    <input id="beginDate" type="text" class="datepicker">
+                                    <input id="beginDate" type="text" class="datepicker" name="date">
                                     <label for="beginDate" class="book-table__label">Date</label>
                                 </div>
                                 <div class="input-field">
-                                    <input id="name" type="text">
+                                    <input id="name" type="text" class="name" name="name">
                                     <label for="name" class="book-table__label">Name</label>
                                 </div>
                             </div>
                             <div class="form-rows">
                                 <div class="input-field">
-                                    <input id="time" type="text" class="timepicker">
+                                    <input id="time" type="text" class="timepicker" name="time">
                                     <label for="time" class="book-table__label">Time</label>
                                 </div>
                                 <div class="input-field">
-                                    <input id="name" type="text">
-                                    <label for="name" class="book-table__label">Phone</label>
+                                    <input id="phone" type="text" name="phone" >
+                                    <label for="phone" class="book-table__label">Phone</label>
                                 </div>
                             </div>
                             <div class="form-rows">
                                 <div class="input-field">
-                                    <select>
-                                        <option value="" disabled selected class="book-table__label">Holl Type</option>
-                                        <option value="1">Wedding Holls</option>
-                                        <option value="2">Banquet Holls</option>
+                                    <select name="hall_type" class="hall_type">
+                                        <option value="" disabled selected class="book-table__label">Hall Type</option>
+                                        <option value="wedding holls">Wedding Holls</option>
+                                        <option value="banquet holls">Banquet Holls</option>
                                     </select>
                                     <!-- <label>People</label> -->
                                 </div>
-                                <div class="input-field">
-                                    <input id="emai" type="email">
+                                <div class="input-field" >
+                                    <input id="emai" type="email" name="email" >
                                     <label for="emai" class="book-table__label">Email</label>
                                 </div>
                             </div>
-
-
                             <div class="from__group book-table__button-2">
-                                <button class="btnx btnx-green ">
-                                    Book now &rarr;
-                                </button>
+                                <input class="btnx btnx-green" id="submit" type="submit" value="Book now &rarr;" >
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
 </main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/book-hall.js"></script>
