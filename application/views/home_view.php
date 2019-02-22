@@ -362,6 +362,9 @@
                             <h1 class="book-table__title">Book a Table</h1>
                             <div class="book-table__msg--red"></div>
                             <div class="book-table__msg--green"></div>
+                            <div class="book-table__msg--white">
+                                <img src="<?php echo base_url();?>assets/img/rolling.gif" alt=""  class="book-table__msg--white-gif">
+                            </div>
                             <div class="book-table__form">
                                 <form action="reservation/makereservation" method="post" class="form" id="form">
                                     <div class="form-rows">
@@ -380,8 +383,8 @@
                                             <label for="time" class="book-table__label">Time</label>
                                         </div>
                                         <div class="input-field">
-                                            <input id="name" type="text" name="phone" >
-                                            <label for="name" class="book-table__label">Phone</label>
+                                            <input id="phone" type="text" name="phone" >
+                                            <label for="phone" class="book-table__label">Phone</label>
                                         </div>
                                     </div>
                                     <div class="form-rows">
@@ -433,36 +436,5 @@
     </div>
     <script src="<?php echo base_url(); ?>assets/js/popup.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-   <script>
-
-        $(document).ready(function(){
-            $('.form').on('submit', function(e){
-                e.preventDefault();
-                $('.book-table__msg--red').empty();
-                $('.book-table__msg--green').empty();
-                
-                $.ajax({
-                    type: 'POST',
-                    url: 'reservation/makereservation',
-                    data: $('.form').serialize(),
-                    datatype: "html",
-                    success: function(data){
-                        var text = data;
-                        if( text === "Booking Successful") {
-                            $('.book-table__msg--green').append(data);
-                            $('.book-table__msg--red').css('display','none');
-                            $('.book-table__msg--green').css('display','block');
-                        }else{
-                            $('.book-table__msg--red').append(data);
-                            $('.book-table').css('height','70rem');
-                            $('.book-table__msg--green').css('display','none');
-                            $('.book-table__msg--red').css('display','block');
-                        }
-                    }
-                });
-            });
-        });
-
-   </script>
+   <script src="<?php echo base_url(); ?>assets/js/book-table.js"></script>
 
