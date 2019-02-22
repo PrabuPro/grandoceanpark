@@ -369,28 +369,28 @@
                                 <form action="reservation/makereservation" method="post" class="form" id="form">
                                     <div class="form-rows">
                                         <div class="input-field">
-                                            <input id="beginDate" type="text" class="datepicker" name="date" >
+                                            <input id="beginDate" type="text" class="datepicker" name="date" required>
                                             <label for="beginDate" class="book-table__label">Date</label>
                                         </div>
                                         <div class="input-field">
-                                            <input id="name" type="text" name="name" >
+                                            <input id="name" type="text" name="name" class="name" required>
                                             <label for="name" class="book-table__label">Name</label>
                                         </div>
                                     </div>
                                     <div class="form-rows">
                                         <div class="input-field">
-                                            <input id="time" type="text" class="timepicker" name="time" >
+                                            <input id="time" type="text" class="timepicker" name="time" required >
                                             <label for="time" class="book-table__label">Time</label>
                                         </div>
                                         <div class="input-field">
-                                            <input id="phone" type="text" name="phone" >
+                                            <input id="phone" type="text" name="phone" class="phone" required>
                                             <label for="phone" class="book-table__label">Phone</label>
                                         </div>
                                     </div>
                                     <div class="form-rows">
                                         <div class="input-field">
-                                            <select name="people" >
-                                                <option value="" disabled selected class="book-table__label">People</option>
+                                            <select name="people" class="people" required>
+                                                <option value="0" disabled selected class="book-table__label">People</option>
                                                 <option value="1">1 Person</option>
                                                 <option value="2">2 People</option>
                                                 <option value="3">3 People</option>
@@ -403,13 +403,13 @@
                                             <!-- <label>People</label> -->
                                         </div>
                                         <div class="input-field">
-                                            <input id="emai" type="email" name="email" >
+                                            <input id="emai" type="email" name="email" class="email" required>
                                             <label for="emai" class="book-table__label">Email</label>
                                         </div>
                                     </div>
 
                                     <div class="from__group book-table__button">
-                                        <input class="btnx btnx-green" id="submit" type="submit" name="name" value="Book now &rarr;" >
+                                        <input class="btnx btnx-green" id="submit" type="submit" value="Book now &rarr;" >
                                     </div>
                                 </form>
                             </div>

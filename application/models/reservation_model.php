@@ -11,6 +11,7 @@ class Reservation_model extends CI_Model {
         if($result->num_rows() >= 2) {
             return false;
         } else{
+            $this->session->sess_expiration = '300';
             $this->session->set_userdata($data);
             $this->db->insert('reservations',$data);
             return $this->db->insert_id();

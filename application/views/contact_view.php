@@ -37,31 +37,35 @@
 			<div class="row">
 				<div class="book-table__box">
 					<h1 class="book-table__title">Send Us a Mail</h1>
+					<div class="book-table__msg--red"></div>
+					<div class="book-table__msg--green"></div>
+					<div class="book-table__msg--white">
+						<img src="<?php echo base_url();?>assets/img/rolling.gif" alt=""  class="book-table__msg--white-gif">
+					</div>
+					
 					<div class="book-table__form">
-						<form action="#" class="form">
+						<form action="mailcontroller/makemessage" class="form" method="post">
 							<div class="form-rows-3">
 								<div class="input-field">
-									<input id="name" type="text" class="input-field__contact-us">
+									<input id="name" type="text" class="input-field__contact-us name" name="name" required>
 									<label for="name" class="book-table__label">Your Name</label>
 								</div>
 							</div>
 							<div class="form-rows-3">
 								<div class="input-field">
-									<input id="email" type="email" class="input-field__contact-us">
+									<input id="email" type="email" class="input-field__contact-us email" name="email" required>
 									<label for="email" class="book-table__label">Your Email</label>
 								</div>
 							</div>
 							<div class="form-rows-3">
 								<div class="input-field">
-									<textarea id="message" class="materialize-textarea input-field__message"></textarea>
+									<textarea id="message" class="materialize-textarea input-field__message " name="message" required></textarea>
 									<label for="message" class="book-table__label">Message</label>
 								</div>
 							</div>
 
 							<div class="from__group book-table__button">
-								<button class="btnx btnx-green ">
-									Book now &rarr;
-								</button>
+									<input class="btnx btnx-green" id="submit" type="submit" value="Book now &rarr;" >
 							</div>
 						</form>
 					</div>
@@ -69,5 +73,7 @@
 			</div>
 		</div>
 	</section>
-
 </main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="<?php echo base_url(); ?>assets/js/mail.js"></script>

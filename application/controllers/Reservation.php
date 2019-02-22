@@ -21,12 +21,6 @@ class Reservation extends CI_Controller{
 
             $today = date("d-m-y");
             
-            $name = $this->input->post('name');
-            $phone = $this->input->post('phone');
-            $email = $this->input->post('email');
-            $date =  $this->input->post('date');
-            $time = $this->input->post('time');
-            $people = $this->input->post('people');
 
             $databaseData = array(
                 'name' => htmlspecialchars($this->input->post('name')),
@@ -84,7 +78,8 @@ class Reservation extends CI_Controller{
         $emailAddress = 'it@sunwayholidays.lk';
         $name = 'Prabuddha';
         $subject = 'Grand Oceanpark Table Bookings';
-        $content = '<h1>Booking Number - GOPTB0'. $id . '</h1>';
+        $content = '<h1>Grand Oceanpark Restaurent - Table Bookings </h1>';
+        $content = '<h2>Booking Number - GOPTB0'. $id . '</h2>';
         $content .= '<h3>This mail is generated with the information of the booking iteslf</h3><br>';
         $content .= '<p>Name - '.$data['name'] . '</p>';
         $content .= '<p>Email - '.$data['email'] . '</p>';
