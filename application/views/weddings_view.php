@@ -70,7 +70,7 @@
                         <img src="<?php echo base_url();?>assets/img/rolling.gif" alt=""  class="book-table__msg--white-gif">
                     </div>
                     <div class="book-table__form-2">
-                        <form action="reservation/bookhall" class="form-2" method="post">
+                        <form action="reservation/bookhal" class="form-2" method="post">
                             <div class="form-rows">
                                 <div class="input-field">
                                     <input id="beginDate" type="text" class="datepicker" name="date">
@@ -95,8 +95,8 @@
                                 <div class="input-field">
                                     <select name="hall_type" class="hall_type">
                                         <option value="" disabled selected class="book-table__label">Hall Type</option>
-                                        <option value="wedding holls">Wedding Holls</option>
-                                        <option value="banquet holls">Banquet Holls</option>
+                                        <option value="wedding holl">Wedding Holls</option>
+                                        <option value="banquet holl">Banquet Holls</option>
                                     </select>
                                     <!-- <label>People</label> -->
                                 </div>

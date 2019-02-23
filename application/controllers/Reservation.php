@@ -19,7 +19,7 @@ class Reservation extends CI_Controller{
             
         } else {
 
-            $today = date("d-m-y"); 
+            $today = date("Y-m-d"); 
             
 
             $databaseData = array(
@@ -90,17 +90,17 @@ class Reservation extends CI_Controller{
             
         } else {
 
-            $today = date("d-m-y");
+            $today = date("Y-m-d");
             
 
             $databaseData = array(
                 'name' => htmlspecialchars($this->input->post('name')),
-                'phone' => htmlspecialchars($this->input->post('phone')),
+                'phoneNo' => htmlspecialchars($this->input->post('phone')),
                 'email' => htmlspecialchars($this->input->post('email')),
                 'date' => htmlspecialchars($this->input->post('date')),
                 'time' => htmlspecialchars($this->input->post('time')),
-                'hall_type' => htmlspecialchars($this->input->post('people')),
-                'date_of_booking' => $today
+                'hall_type' => htmlspecialchars($this->input->post('hall_type')),
+                'dateOfBooking' => $today
             );
 
 
@@ -112,11 +112,11 @@ class Reservation extends CI_Controller{
                 //check wheather have session initialized
                 if($this->session->has_userdata('name')) {
                     //Check the session wheather it is same
-                    if($this->session->userdata('phoneNo') == $databaseData['phone'] && $this->session->userdata('date') == $databaseData['date'] && $this->session->userdata('time') == $databaseData['time'] && $this->session->userdata('name') == $databaseData['name'] && $this->session->userdata('email') == $databaseData['email'] && $this->session->userdata('hall_type') == $databaseData['hall_type'] ){
+                    if($this->session->userdata('phone') == $databaseData['phoneNo'] && $this->session->userdata('date') == $databaseData['date'] && $this->session->userdata('time') == $databaseData['time'] && $this->session->userdata('name') == $databaseData['name'] && $this->session->userdata('email') == $databaseData['email'] && $this->session->userdata('hall_type') == $databaseData['hall_type'] ){
                         $message = "You have entered the same value again";
                     } else {
                         //send to database
-                        $result =  $this->reservation_model->bookTable($databaseData);
+                        $result =  $this->reservation_model->bookHall($databaseData);
                         if($result == false){
                             $message =  "Sorry! All the Tables booked at the time";
                         } else {
@@ -126,7 +126,7 @@ class Reservation extends CI_Controller{
                 }
             } else {
                 //if no session go to database
-                $result =  $this->reservation_model->bookTable($databaseData);
+                $result =  $this->reservation_model->bookHall($databaseData);
                 if($result == false){
                         $message =  "Sorry! All the Tables booked at the time";
                 } else {
