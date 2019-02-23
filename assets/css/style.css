@@ -416,6 +416,12 @@ nav {
 	justify-content: flex-start;
 }
 
+@media (max-width: 56.25em) {
+	.footer__social {
+		justify-content: center;
+	}
+}
+
 .footer__social--icon {
 	margin: 0 1rem;
 	fill: #fff;
@@ -456,6 +462,7 @@ nav {
 	.footer__copyright {
 		width: 100%;
 		float: none;
+		padding: 2rem;
 	}
 }
 
