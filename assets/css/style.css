@@ -925,6 +925,14 @@ body {
 	transition: opacity 0.35s, transform 0.35s;
 	-webkit-transform: translate3d(0, 20px, 0) scale(1.1);
 	transform: translate3d(0, 20px, 0) scale(1.1);
+	
+}
+
+@media (max-width: 56.25em) {
+	.wedding figure.effect-ruby p {
+		padding: .5em;
+		font-size: 1.2rem;
+	}
 }
 
 .wedding figure.effect-ruby:hover h2 {
